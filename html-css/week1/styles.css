@@ -1,0 +1,88 @@
+/* Common styles */
+
+body {
+	padding: 7em;
+	letter-spacing: 0.01em;
+	color: #471f2c;
+	font-family: Cambria;
+	font-size: 1.1em;
+}
+hr {
+	border: 1px solid #14043a;
+}
+
+h1 {
+	color: #1c0d12;
+}
+
+h2 {
+	color: #8d3f58;
+}
+
+img {
+	width: 60%;
+	border-radius: 10%;
+	min-width: 100px;
+	float: right;
+	display: block;
+	margin-right: 3em;
+}
+
+/* Styles for columns */
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.column-left {
+	flex: 1 0 65%;
+	margin-right: 2em;
+}
+
+.column-right {
+	flex: 1 0 25%;
+}
+
+/* All the links should be here without underlining */
+a {
+	text-decoration: none;
+}
+
+/* Styles for social media links */
+.social-btn {
+	font-size: 1.1em;
+	margin-right: 0.6em;
+	color: #1c0d12;
+}
+
+.social-btn:hover {
+	color: #186162;
+}
+
+.about {
+	padding: 2.5em 0;
+}
+
+/* Styles for certificate section */
+.certificates {
+	text-align: center;
+	font-style: italic;
+}
+
+.certificates ul {
+	list-style-type: none;
+}
+
+.certificates a {
+	color: #8c6c69;
+	opacity: 0.8;
+}
+
+.certificates h2{
+	color: #9b4663;
+}
+
+.certificates a:hover {
+	opacity: 1;
+	color: #46202d;
+}
