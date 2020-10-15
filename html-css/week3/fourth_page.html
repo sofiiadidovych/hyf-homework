@@ -19,7 +19,7 @@
                 <label for="step4"></label>
                 <progress id="step4" value="90" max="100">90%</progress>
                 <p>Please fill in your payment data</p>
-                <form action="#" method="get">
+                <form action="#" method="POST">
                     <div class="row">
                         <div class="column">
                             <label for="cardname">Name on card</label>
@@ -30,7 +30,7 @@
                         <div class="column">
                             <label for="cardtype">Card type</label>
                             <select id="cardtype" name="cardtype">
-                                <option style="display:none"></option>
+                                <option value="" style="display:none">&nbsp;</option>
                                 <option value="maestro">Maestro</option>
                                 <option value="visa">Visa</option>
                                 <option value="mastercard">Master Card</option>
@@ -40,36 +40,32 @@
                     <div class="row">
                         <div class="column">
                             <label for="cardnumber">Credit card number</label>
-                            <input id="cardnumber" type="text" required pattern="[0-9]{16}">
+                            <input id="cardnumber" type="text" name="cardnumber" pattern="[0-9]{16}">
                         </div>
                         <div class="column">
-                            <label for="fname4">First name<abbr title="required" aria-label="required">*</abbr></label>
+                            <label for="fname4">First name</label>
                             <input id="fname4" type="text" name="fname4">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="column">
-                            <div class="column-smaller">
+                            <div class="column-small">
                                 <label for="expmonth">Expiry month</label>
                                 <input id="expmonth" type="month" name="expmonth">
                             </div>
-                            <div class="column-smaller">
+                            <div class="column-small">
                                 <label for="expyear">Expiry year</label>
-                                <input id="expyear" type="text" required pattern="[0-9]{4}">
+                                <input id="expyear" type="text" name="expyear" pattern="[0-9]{2}">
                             </div>
-                        </div>
                     </div>
                     <div class="row">
-                        <div class="column">
-                            <div class="column-smaller">
+                            <div class="column-small">
                                 <label for="ccv">CCV</label>
-                                <input id="ccv" type="text" required pattern="[0-9]{3}">
+                                <input id="ccv" type="text" name="ccv" pattern="[0-9]{3}">
                             </div>
-                        </div>
                     </div>
+                    <input type="submit" value="Next step">
                 </form>
             </section>
-            <a href="fourth_page.html"><input type="submit" value="Next step"></a>
         </main>
     </body>
 </html>

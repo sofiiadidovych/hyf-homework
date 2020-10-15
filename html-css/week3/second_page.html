@@ -19,46 +19,47 @@
                 <label for="step2"></label>
                 <progress id="step2" value="32" max="100">32%</progress>
                 <p>We will probably need to stay in touch somehow. Let us know how we can reach you?</p>
-                <form action="#" method="get">
+                <form action="third_page.html" method="POST">
                     <div class="row">
                         <div class="column">
-                            <label for="email">Email<abbr title="required" aria-label="required">*</abbr></label>
-                            <input id="email" type="email" name="email" required>
+                            <label for="email">Email<abbr>*</abbr></label>
+                            <input id="email" type="email" name="email" required pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
                         </div>
                         <div class="column">
                             <label for="phone">Phone</label>
-                            <input id="phone" type="tel" name="phone">
+                            <input id="phone" type="tel" name="phone" pattern="[0-9]{8}" title="Must contain eight digits">
                         </div>
                     </div>
                     <div class="row">
                         <div class="column">
-                            <label for="password">Password<abbr title="required" aria-label="required">*</abbr></label>
-                            <input id="password" type="password" name="password" required>
+                            <label for="password">Password<abbr>*</abbr></label>
+                            <input id="password" type="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 10 or more characters">
                         </div>
                     </div>
                     <div class="row">
                         <div class="column">
-                            <label for="re-enter_password">Re-enter Password<abbr title="required" aria-label="required">*</abbr></label>
-                            <input id="re-enter_password" name="re-enter_password" required>
+                            <label for="re_enter_password">Re-enter Password<abbr>*</abbr></label>
+                            <input id="re_enter_password" type="password" name="re_enter_password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 10 or more characters">
                         </div>
                     </div>
                     <p>I want to sign up for the newsletter</p>
+                    <!-- Section with radio buttons -->
                     <div class="subscription_field">
                         <div class="subscription_btn">
                             <label for="wnews">Weekly news</label>
-                            <input id="wnews" type="checkbox" value="subscribe" checked>
+                            <input id="wnews" type="radio" name="subscription" value="wnews" checked>
                         </div>
                         <div class="subscription_btn">
                             <label for="mnews">Monthly news</label>
-                            <input id="mnews" type="checkbox" value="subscribe">
+                            <input id="mnews" type="radio" name="subscription" value="mnews">
                         </div>
                         <div class="subscription_btn">
                             <label for="nonews">Don't send me news</label>
-                            <input id="nonews" type="checkbox" value="subscribe">
+                            <input id="nonews" type="radio" name="subscription" value="nonews">
                         </div>
                     </div>
-                  </form>
-                <a href="third_page.html"><input type="submit" value="Next step"></a>
+                    <input type="submit" value="Next step">
+                </form>
             </section>
         </main>
     </body>

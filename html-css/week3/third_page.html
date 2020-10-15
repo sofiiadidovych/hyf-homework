@@ -19,77 +19,81 @@
                 <label for="step3"></label>
                 <progress id="step3" value="50" max="100">50%</progress>
                 <p>What kind of items are you interested in offers on?</p>
-                <form action="#" method="get">
+                <form action="fourth_page.html" method="POST">
                     <div class="row">
                         <div class="column">
                             <label for="apparel">Apparel</label>
-                            <input id="apparel" type="checkbox" value="item" checked>
+                            <input id="apparel" name="apparel"  type="checkbox" value="selected" checked>
                         </div>
                         <div class="column">
                             <label for="jewelry">Jewelry</label>
-                            <input id="jewelry" type="checkbox" value="item" checked>
+                            <input id="jewelry" name="jewelry" type="checkbox" value="selected" checked>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="column">
                             <label for="accessories">Accessories</label>
-                            <input id="accessories" type="checkbox" value="item" checked>
+                            <input id="accessories" name="accessories" type="checkbox" value="selected" checked>
                         </div>
                         <div class="column">
                             <label for="shoes">Shoes</label>
-                            <input id="shoes" type="checkbox" value="item" checked>
+                            <input id="shoes" name="shoes" type="checkbox" value="selected" checked>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="column">
                             <label for="handbags">Handbags</label>
-                            <input id="handbags" type="checkbox" value="item">
+                            <input id="handbags" name="handbags" type="checkbox" value="selected">
                         </div>
                     </div>
                     <p>Choose the images that best resemble your style</p>
                     <div class="gallery-row">
                         <div class="gallery-column">
-                            <img src="placeholder_image.jpg">
+                            <img src="placeholder_image.jpg" alt="placeholder-image">
                             <label for="select">Select</label>
-                            <input id="select" type="checkbox" value="item">
+                            <input id="select" name="select" type="checkbox" value="selected">
                         </div>
                         <div class="gallery-column">
-                            <img src="placeholder_image.jpg">
+                            <img src="placeholder_image.jpg" alt="placeholder-image">
                             <label for="select1">Select</label>
-                            <input id="select1" type="checkbox" value="item">
+                            <input id="select1" name="select1" type="checkbox" value="selected">
                         </div>
                         <div class="gallery-column">
-                            <img src="placeholder_image.jpg">
+                            <img src="placeholder_image.jpg" alt="placeholder-image">
                             <label for="select2">Select</label>
-                            <input id="select2" type="checkbox" value="item">
+                            <input id="select2" name="select2" type="checkbox" value="selected">
                         </div>
                         <div class="gallery-column">
-                            <img src="placeholder_image.jpg">
+                            <img src="placeholder_image.jpg" alt="placeholder-image">
                             <label for="select3">Select</label>
-                            <input id="select3" type="checkbox" value="item">
+                            <input id="select3" name="select3" type="checkbox" value="selected">
                         </div>
                     </div>
                     <div class="gallery-row">
                         <div class="gallery-column">
-                            <img src="placeholder_image.jpg">
+                            <img src="placeholder_image.jpg" alt="placeholder-image">
                             <label for="select4">Select</label>
-                            <input id="select4" type="checkbox" value="item">
+                            <input id="select4" name="select4" type="checkbox" value="selected">
                         </div>
                         <div class="gallery-column">
-                            <img src="placeholder_image.jpg">
+                            <img src="placeholder_image.jpg" alt="placeholder-image">
                             <label for="select5">Select</label>
-                            <input id="select5" type="checkbox" value="item">
+                            <input id="select5" name="select5" type="checkbox" value="selected">
                         </div>
                         <div class="gallery-column">
-                            <img src="placeholder_image.jpg">
+                            <img src="placeholder_image.jpg" alt="placeholder-image">
                             <label for="select6">Select</label>
-                            <input id="select6" type="checkbox" value="item">
+                            <input id="select6" name="select6" type="checkbox" value="selected">
                         </div>
                         <div class="gallery-column">
-                            <img src="placeholder_image.jpg">
+                            <img src="placeholder_image.jpg" alt="placeholder-image">
                             <label for="select7">Select</label>
-                            <input id="select7" type="checkbox" value="item">
+                            <input id="select7" name="select7" type="checkbox" value="selected">
                         </div>
                     </div>
+                    <input type="submit" value="Next step">
                 </form>
             </section>
-            <a href="fourth_page.html"><input type="submit" value="Next step"></a>
         </main>
     </body>
 </html>

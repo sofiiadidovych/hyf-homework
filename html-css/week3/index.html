@@ -23,22 +23,24 @@
                 <label for="step1"></label>
                 <progress id="step1" value="8" max="100">8%</progress>
                 <p>Nice to meet you. Let's spend a minute to get to know each other? please enter the folowing:</p>
-                <form action="#" method="get">
+                <!-- Form section includes all input fields -->
+                <form action="second_page.html" method="POST">
                     <div class="row">
                         <div class="column">
-                            <label for="fname">First name<abbr title="required" aria-label="required">*</abbr></label>
+                            <label for="fname">First name<abbr>*</abbr></label>
                             <input id="fname" type="text" name="fname" required>
                         </div>
                         <div class="column">
-                            <label for="lname">Last name<abbr title="required" aria-label="required">*</abbr></label>
+                            <label for="lname">Last name<abbr>*</abbr></label>
                             <input id="lname" type="text" name="lname" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="column">
-                            <label for="country">Country<abbr title="required" aria-label="required">*</abbr></label>
+                            <label for="country">Country<abbr>*</abbr></label>
                             <select id="country" name="country" required>
-                                <option style="display:none"></option>
+                                <!-- Empty select option which is hidden in the drop down list -->
+                                <option value="" style="display:none">&nbsp;</option>
                                 <option value="denmark">Denmark</option>
                                 <option value="germany">Germany</option>
                                 <option value="netherlands">Netherlands</option>
@@ -50,12 +52,12 @@
                     </div>
                     <div class="row">
                         <div class="column">
-                            <label for="straddress">Street address<abbr title="required" aria-label="required">*</abbr></label>
+                            <label for="straddress">Street address<abbr>*</abbr></label>
                             <input id="straddress" type="text" maxlength="15" name="straddress" required>
                         </div>
                         <div class="column">
-                            <label for="pcode">Post code<abbr title="required" aria-label="required">*</abbr></label>
-                            <input id="pcode" type="text" required pattern="[0-9]{4}">
+                            <label for="pcode">Post code<abbr>*</abbr></label>
+                            <input id="pcode" type="text" name="pcode" required pattern="[0-9]{4}">
                         </div>
                     </div>
                     <div class="row">
@@ -68,62 +70,58 @@
                         </div>
                     </div>
                 <p>Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address.</p>
-                </form>
-            </section>
-            <section>
                 <!-- Shipping address -->
                 <label for="toggle">Shipping address</label>
-                <input id="toggle" type="checkbox" name="shippingaddress" value="address" checked>
+                <input id="toggle" type="checkbox" name="shippingaddress" value="shippingaddress" checked>
                 <!-- If shipping address is checked the next div is hidden -->
                     <div class="hidden">
                         <h3>Shipping address</h3>
-                        <form action="#" method="get">
-                            <div class="row">
-                                <div class="column">
-                                    <label for="fnameship">First name<abbr title="required" aria-label="required">*</abbr></label>
-                                    <input id="fnameship" type="text" name="fname" required>
-                                </div>
-                                <div class="column">
-                                    <label for="lnameship">Last name<abbr title="required" aria-label="required">*</abbr></label>
-                                    <input id="lnameship" type="text" name="lname" required>
-                                </div>
+                        <div class="row">
+                            <div class="column">
+                                <label for="fnameship">First name<abbr>*</abbr></label>
+                                <input id="fnameship" type="text" name="fnameship">
                             </div>
-                            <div class="row">
-                                <div class="column">
-                                    <label for="countryship">Country<abbr title="required" aria-label="required">*</abbr></label>
-                                    <select id="countryship" name="country" required>
-                                        <option style="display:none"></option>
-                                        <option value="denmark">Denmark</option>
-                                        <option value="germany">Germany</option>
-                                        <option value="netherlands">Netherlands</option>
-                                        <option value="italy">Italy</option>
-                                        <option value="great_britain">Great Britain</option>
-                                        <option value="usa">USA</option>
-                                    </select>
-                                </div>
+                            <div class="column">
+                                <label for="lnameship">Last name<abbr>*</abbr></label>
+                                <input id="lnameship" type="text" name="lnameship">
                             </div>
-                            <div class="row">
-                                <div class="column">
-                                    <label for="straddressship">Street address<abbr title="required" aria-label="required">*</abbr></label>
-                                    <input id="straddressship" type="text" maxlength="15" name="straddress" required>
-                                </div>
-                                <div class="column">
-                                    <label for="pcodeship">Post code<abbr title="required" aria-label="required">*</abbr></label>
-                                    <input id="pcodeship" type="text" required pattern="[0-9]{4}">
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <label for="countryship">Country<abbr>*</abbr></label>
+                                <select id="countryship" name="countryship">
+                                    <option value="" style="display:none">&nbsp;</option>
+                                    <option value="denmark">Denmark</option>
+                                    <option value="germany">Germany</option>
+                                    <option value="netherlands">Netherlands</option>
+                                    <option value="italy">Italy</option>
+                                    <option value="great_britain">Great Britain</option>
+                                    <option value="usa">USA</option>
+                                </select>
                             </div>
-                            <div class="row">
-                                <div class="column-narrow">
-                                    <label for="profdescriptionship">Profile description</label>
-                                    <p><i>Please provide a short description of yourself to be displayed on our social community pages</i></p>
-                                </div>
-                                <div class="column-wide">
-                                    <textarea id="profdescriptionship" name="profdescription" maxlength="500"></textarea>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <label for="straddressship">Street address<abbr>*</abbr></label>
+                                <input id="straddressship" type="text" maxlength="15" name="straddressship">
                             </div>
-                        </form>
+                            <div class="column">
+                                <label for="pcodeship">Post code<abbr>*</abbr></label>
+                                <input id="pcodeship" type="text" name="pcodeship" pattern="[0-9]{4}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column-narrow">
+                                <label for="profdescriptionship">Profile description</label>
+                                <p><i>Please provide a short description of yourself to be displayed on our social community pages</i></p>
+                            </div>
+                            <div class="column-wide">
+                                <textarea id="profdescriptionship" name="profdescriptionship" maxlength="500"></textarea>
+                            </div>
+                        </div>
                     </div>
-                    <a href="second_page.html"><input type="submit" value="Next step"></a>
+                    <input type="submit" value="Next step">
+                </form>
             </section>
         </main>
     </body>

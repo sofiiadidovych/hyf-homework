@@ -3,7 +3,7 @@
     padding: 0;
 }
 body {
-    padding: 2em;
+    padding: 3em;
     font-family: Lucida, sans-serif;
 }
 h1,
@@ -12,10 +12,10 @@ h3,
 p {
     padding: 1em 0;
 }
-h1{
+h1 {
     font-size: 2em;
 }
-header{
+header {
     height: 15vh;
     display: flex;
     justify-content: space-between;
@@ -44,39 +44,41 @@ progress::-webkit-progress-bar {
 progress::-webkit-progress-value {
     background-color: #cdcdcd;
 }
-abbr{
+abbr {
     text-decoration: none;
 }
-.row{
+/* Building blocks for content */
+.row {
     display: flex;
     flex-wrap: wrap;
     padding: 1em;
-}
-.column{
-    flex: 0 0 50%;
     text-align: center;
 }
-.column-smaller{
-    flex: 25%;
+.column {
+    flex: 0 0 50%;
 }
-.column-smaller input{
-    width: 20%;
+.column-small {
+    flex: 0 0 25%;
 }
-
-.column-narrow{
+.column-small input {
+    width: 15%;
+}
+.column-narrow {
     flex: 0 0 20%;
-    padding-top: 2em;
+    padding-top: 5em;
 }
-.column-wide{
-    flex: 0 0 80%;
-    padding-top: 2em;
+.column-wide {
+    flex: 0 0 75%;
+    padding-top: 5em;
 }
-textarea{
+textarea {
     width: 100%;
     height: 10em;
+    border: 2px solid #b3b2b2;
 }
-label{
+form label {
     font-weight: bold;
+    padding: 1em;
 }
 input,
 select {
@@ -85,16 +87,29 @@ select {
     margin-right:0;
     border: 2px solid #b3b2b2;
 }
-#toggle:checked ~ .hidden{
+input[type="checkbox"] {
+    cursor: pointer;
+    height: 2em;
+    width: 2em;
+}
+/* Hide shipping address when checked */
+#toggle:checked ~ .hidden {
     display: none;
     position: absolute;
 }
-.subscription_field{
+/* Styles for radio buttons */
+.subscription_field {
     display: flex;
-    text-align: right;
 }
 .subscription_btn {
-    flex: 30%;
+    margin-right: 3em;
+    padding: 1em;
+    padding-bottom: 10em;
+}
+input[type="radio"] {
+    cursor: pointer;
+    height: 2em;
+    width: 2em;
 }
 .gallery-row {
     display: flex;
@@ -104,14 +119,16 @@ select {
     flex: 0 0 20%;
     padding: 1em;
 }
-.gallery-column img{
+.gallery-column img {
     width: 100%;
 }
-input[type="submit"]{
+/* Styles for submit button */
+input[type="submit"] {
+    font-size: 1.3em;
     width: 20%;
     float: right;
     margin-bottom: 3em;
-    height: 6em;
+    height: 5.6em;
     background-color: #cccccc;
     border: 1px solid #979797;
     font-weight: bold;
