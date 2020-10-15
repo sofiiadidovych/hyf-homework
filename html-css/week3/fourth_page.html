@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Yourcustomtailor_Page4</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo-column">Logo</div>
+            <div class="navigation-column">Navigation</div>
+        </header>
+        <main>
+            <section>
+                <h1>Sign up to yourcustomtailor.com</h1>
+                <h2>Step 4/4 - Payment</h2>
+                <h3>Progress</h3>
+                <label for="step4"></label>
+                <progress id="step4" value="90" max="100">90%</progress>
+                <p>Please fill in your payment data</p>
+                <form action="#" method="get">
+                    <div class="row">
+                        <div class="column">
+                            <label for="cardname">Name on card</label>
+                            <input id="cardname" type="text" name="cardname">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <label for="cardtype">Card type</label>
+                            <select id="cardtype" name="cardtype">
+                                <option style="display:none"></option>
+                                <option value="maestro">Maestro</option>
+                                <option value="visa">Visa</option>
+                                <option value="mastercard">Master Card</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <label for="cardnumber">Credit card number</label>
+                            <input id="cardnumber" type="text" required pattern="[0-9]{16}">
+                        </div>
+                        <div class="column">
+                            <label for="fname4">First name<abbr title="required" aria-label="required">*</abbr></label>
+                            <input id="fname4" type="text" name="fname4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <div class="column-smaller">
+                                <label for="expmonth">Expiry month</label>
+                                <input id="expmonth" type="month" name="expmonth">
+                            </div>
+                            <div class="column-smaller">
+                                <label for="expyear">Expiry year</label>
+                                <input id="expyear" type="text" required pattern="[0-9]{4}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <div class="column-smaller">
+                                <label for="ccv">CCV</label>
+                                <input id="ccv" type="text" required pattern="[0-9]{3}">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <a href="fourth_page.html"><input type="submit" value="Next step"></a>
+        </main>
+    </body>
+</html>

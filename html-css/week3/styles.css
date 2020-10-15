@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    padding: 2em;
+    font-family: Lucida, sans-serif;
+}
+h1,
+h2,
+h3,
+p {
+    padding: 1em 0;
+}
+h1{
+    font-size: 2em;
+}
+header{
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3em;
+}
+header div {
+    background-color: #cccccc;
+    text-align: center;
+    padding-top: 5vh;
+    border: 1px solid #979797;
+}
+.logo-column {
+    flex: 0 0 10%;
+}
+.navigation-column {
+    flex: 0 0 40%;
+}
+progress {
+    width: 100%;
+    height: 3.5em;
+    border: 1px solid darkgrey;
+}
+progress::-webkit-progress-bar {
+    background-color: white;
+}
+progress::-webkit-progress-value {
+    background-color: #cdcdcd;
+}
+abbr{
+    text-decoration: none;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+.column{
+    flex: 0 0 50%;
+    text-align: center;
+}
+.column-smaller{
+    flex: 25%;
+}
+.column-smaller input{
+    width: 20%;
+}
+
+.column-narrow{
+    flex: 0 0 20%;
+    padding-top: 2em;
+}
+.column-wide{
+    flex: 0 0 80%;
+    padding-top: 2em;
+}
+textarea{
+    width: 100%;
+    height: 10em;
+}
+label{
+    font-weight: bold;
+}
+input,
+select {
+    width: 50%;
+    padding: 1em;
+    margin-right:0;
+    border: 2px solid #b3b2b2;
+}
+#toggle:checked ~ .hidden{
+    display: none;
+    position: absolute;
+}
+.subscription_field{
+    display: flex;
+    text-align: right;
+}
+.subscription_btn {
+    flex: 30%;
+}
+.gallery-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.gallery-column {
+    flex: 0 0 20%;
+    padding: 1em;
+}
+.gallery-column img{
+    width: 100%;
+}
+input[type="submit"]{
+    width: 20%;
+    float: right;
+    margin-bottom: 3em;
+    height: 6em;
+    background-color: #cccccc;
+    border: 1px solid #979797;
+    font-weight: bold;
+}

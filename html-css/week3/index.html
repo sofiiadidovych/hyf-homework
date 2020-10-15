@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Yourcustomtailor</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo-column">Logo</div>
+            <div class="navigation-column">Navigation</div>
+        </header>
+        <main>
+            <section>
+                <h1>Sign up to yourcustomtailor.com</h1>
+                <p>We can't wait to help you improve your life-style and gain the attention from people around you</p>
+                <p>Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy picking the best offers that match your preferences and style. Every week we will send you a hand picked selection - we just need to know a few details about you first...</p>
+            </section>
+            <section>
+                <h2>Step 1/4 - tell us who you are?</h2>
+                <h3>Progress</h3>
+                <label for="step1"></label>
+                <progress id="step1" value="8" max="100">8%</progress>
+                <p>Nice to meet you. Let's spend a minute to get to know each other? please enter the folowing:</p>
+                <form action="#" method="get">
+                    <div class="row">
+                        <div class="column">
+                            <label for="fname">First name<abbr title="required" aria-label="required">*</abbr></label>
+                            <input id="fname" type="text" name="fname" required>
+                        </div>
+                        <div class="column">
+                            <label for="lname">Last name<abbr title="required" aria-label="required">*</abbr></label>
+                            <input id="lname" type="text" name="lname" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <label for="country">Country<abbr title="required" aria-label="required">*</abbr></label>
+                            <select id="country" name="country" required>
+                                <option style="display:none"></option>
+                                <option value="denmark">Denmark</option>
+                                <option value="germany">Germany</option>
+                                <option value="netherlands">Netherlands</option>
+                                <option value="italy">Italy</option>
+                                <option value="great_britain">Great Britain</option>
+                                <option value="usa">USA</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <label for="straddress">Street address<abbr title="required" aria-label="required">*</abbr></label>
+                            <input id="straddress" type="text" maxlength="15" name="straddress" required>
+                        </div>
+                        <div class="column">
+                            <label for="pcode">Post code<abbr title="required" aria-label="required">*</abbr></label>
+                            <input id="pcode" type="text" required pattern="[0-9]{4}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column-narrow">
+                            <label for="profdescription">Profile description</label>
+                            <p><i>Please provide a short description of yourself to be displayed on our social community pages</i></p>
+                        </div>
+                        <div class="column-wide">
+                            <textarea id="profdescription" name="profdescription" maxlength="500"></textarea>
+                        </div>
+                    </div>
+                <p>Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address.</p>
+                </form>
+            </section>
+            <section>
+                <!-- Shipping address -->
+                <label for="toggle">Shipping address</label>
+                <input id="toggle" type="checkbox" name="shippingaddress" value="address" checked>
+                <!-- If shipping address is checked the next div is hidden -->
+                    <div class="hidden">
+                        <h3>Shipping address</h3>
+                        <form action="#" method="get">
+                            <div class="row">
+                                <div class="column">
+                                    <label for="fnameship">First name<abbr title="required" aria-label="required">*</abbr></label>
+                                    <input id="fnameship" type="text" name="fname" required>
+                                </div>
+                                <div class="column">
+                                    <label for="lnameship">Last name<abbr title="required" aria-label="required">*</abbr></label>
+                                    <input id="lnameship" type="text" name="lname" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column">
+                                    <label for="countryship">Country<abbr title="required" aria-label="required">*</abbr></label>
+                                    <select id="countryship" name="country" required>
+                                        <option style="display:none"></option>
+                                        <option value="denmark">Denmark</option>
+                                        <option value="germany">Germany</option>
+                                        <option value="netherlands">Netherlands</option>
+                                        <option value="italy">Italy</option>
+                                        <option value="great_britain">Great Britain</option>
+                                        <option value="usa">USA</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column">
+                                    <label for="straddressship">Street address<abbr title="required" aria-label="required">*</abbr></label>
+                                    <input id="straddressship" type="text" maxlength="15" name="straddress" required>
+                                </div>
+                                <div class="column">
+                                    <label for="pcodeship">Post code<abbr title="required" aria-label="required">*</abbr></label>
+                                    <input id="pcodeship" type="text" required pattern="[0-9]{4}">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column-narrow">
+                                    <label for="profdescriptionship">Profile description</label>
+                                    <p><i>Please provide a short description of yourself to be displayed on our social community pages</i></p>
+                                </div>
+                                <div class="column-wide">
+                                    <textarea id="profdescriptionship" name="profdescription" maxlength="500"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <a href="second_page.html"><input type="submit" value="Next step"></a>
+            </section>
+        </main>
+    </body>
+</html>

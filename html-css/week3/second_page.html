@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Yourcustomtailor_Page2</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo-column">Logo</div>
+            <div class="navigation-column">Navigation</div>
+        </header>
+        <main>
+            <section>
+                <h1>Sign up to yourcustomtailor.com</h1>
+                <h2>Step 2/4 - how can we reach you?</h2>
+                <h3>Progress</h3>
+                <label for="step2"></label>
+                <progress id="step2" value="32" max="100">32%</progress>
+                <p>We will probably need to stay in touch somehow. Let us know how we can reach you?</p>
+                <form action="#" method="get">
+                    <div class="row">
+                        <div class="column">
+                            <label for="email">Email<abbr title="required" aria-label="required">*</abbr></label>
+                            <input id="email" type="email" name="email" required>
+                        </div>
+                        <div class="column">
+                            <label for="phone">Phone</label>
+                            <input id="phone" type="tel" name="phone">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <label for="password">Password<abbr title="required" aria-label="required">*</abbr></label>
+                            <input id="password" type="password" name="password" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <label for="re-enter_password">Re-enter Password<abbr title="required" aria-label="required">*</abbr></label>
+                            <input id="re-enter_password" name="re-enter_password" required>
+                        </div>
+                    </div>
+                    <p>I want to sign up for the newsletter</p>
+                    <div class="subscription_field">
+                        <div class="subscription_btn">
+                            <label for="wnews">Weekly news</label>
+                            <input id="wnews" type="checkbox" value="subscribe" checked>
+                        </div>
+                        <div class="subscription_btn">
+                            <label for="mnews">Monthly news</label>
+                            <input id="mnews" type="checkbox" value="subscribe">
+                        </div>
+                        <div class="subscription_btn">
+                            <label for="nonews">Don't send me news</label>
+                            <input id="nonews" type="checkbox" value="subscribe">
+                        </div>
+                    </div>
+                  </form>
+                <a href="third_page.html"><input type="submit" value="Next step"></a>
+            </section>
+        </main>
+    </body>
+</html>
