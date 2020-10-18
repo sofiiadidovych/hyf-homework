@@ -1,8 +1,2 @@
-<<<<<<< HEAD
-Blue
-Yellow
-Pink
-=======
 Blue, Green
 Yellow
->>>>>>> a02abc4fba50ab3697c068b4fe38563db0d71f8c
