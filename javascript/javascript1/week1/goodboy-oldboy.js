@@ -1,12 +1,11 @@
-let dogYearOfBirth=2017;
-let dogYearFuture=2027;
-let dogYear;
-let shouldShowResultInDogYears=true;
-if (shouldShowResultInDogYears){
-    dogYear=(dogYearFuture-dogYearOfBirth)*7;
-}
-else {
-    dogYear=(dogYearFuture-dogYearOfBirth);
+let dogYearOfBirth = 2017;
+let dogYearFuture = 2027;
+let dogYear = dogYearFuture - dogYearOfBirth;
+let shouldShowResultInDogYears = true;
+let yearsTypeStr = "human";
+if (shouldShowResultInDogYears) {
+    dogYear *= 7;
+    yearsTypeStr = "dog";
 }
 console.log(dogYear);
-console.log("Your dog will be " + dogYear + " dog years old in " + dogYearFuture + ".");
+console.log("Your dog will be " + dogYear + " " + yearsTypeStr + " years old in " + dogYearFuture + ".");
