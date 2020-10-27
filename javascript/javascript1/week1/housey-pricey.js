@@ -23,10 +23,10 @@ else {
 width = 5;
 depth = 11;
 height = 8;
-volumeInMeters2 = width * depth * height;
-console.log("Julia's house is " + volumeInMeters2 + " m3.");
+volumeInMeters = width * depth * height;
+console.log("Julia's house is " + volumeInMeters + " m3.");
 gardenSizeInM2 = 70;
-totalPrice = volumeInMeters2 * 2.5 * 1000 + gardenSizeInM2 * 300;
+totalPrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
 console.log("Julia's house price is actually " + totalPrice);
 let priceJuliaPaid = 1000000;
 priceDifference = priceJuliaPaid - totalPrice;
