@@ -10,8 +10,8 @@ function getFullName(firstname, surname, useFormalName = false) {
         return firstname + " " + surname;
     }
 }
-let fullname1 = getFullName('Sofiia', 'Didovych');
-let fullname2 = getFullName('Maksym', 'Didovych');
+const fullname1 = getFullName('Sofiia', 'Didovych');
+const fullname2 = getFullName('Maksym', 'Didovych');
 console.log(fullname1);
 console.log(fullname2);
 // Test useFormalName
