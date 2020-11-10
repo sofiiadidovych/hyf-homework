@@ -1,3 +1,4 @@
+"use strict"
 const travelInformation = {
     speed: 50,
     destinationDistance: 432,
