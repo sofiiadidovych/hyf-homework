@@ -28,7 +28,7 @@ function logOutSeriesText() {
         console.log(`${seriesDurations[i].title} took ${seriesLifespanPercentage.toFixed(3)}% of my life`);
         total += seriesLifespanPercentage;
     }
-    console.log(`In total that is ${total.toFixed(3)}% of my life`)
+    console.log(`In total that is ${total.toFixed(3)}% of my life`);
 }
 
 function wastedTimeToMin (series) {

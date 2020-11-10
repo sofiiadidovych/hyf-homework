@@ -1,10 +1,9 @@
 "use strict"
-
 // Save a note
 const notes = [];
 
 function saveNote(content, id) {
-    const note = { content: content, id: id }
+    const note = { content: content, id: id };
     notes.push(note);
 }
 saveNote('Pick up groceries', 1);
