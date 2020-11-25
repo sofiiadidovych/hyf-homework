@@ -2,12 +2,11 @@
     display: flex;
     flex-direction: column;
     padding: 10em;
-    margin-top: 2em;
+    margin-top: 4em;
 }
-#my-input {
-    /* flex: 50%; */
+.name_input {
     padding: 2em;
-    margin: 1.2em;
+    margin: 0 1.2em 1.2em 1.2em;
     text-align: center;
     font-size: larger;
     border: 2px solid rosybrown;
@@ -15,7 +14,7 @@
     background-color: rgb(253, 212, 219);
     border-radius: 5px;
 }
-#my-butn {
+.button {
     padding: 1em;
     width: 20%;
     align-self: center;
@@ -31,4 +30,10 @@ body {
     color: rgb(255, 255, 255);
     font-size: larger;
     background: url(maxresdefault.jpg) 50% 50% no-repeat;
+}
+.options {
+    display: flex;
+    flex-direction: row;
+    margin: 2em 0;
+    align-self: center;
 }
