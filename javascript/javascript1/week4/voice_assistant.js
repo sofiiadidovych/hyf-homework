@@ -62,10 +62,24 @@ function getReply(command) {
         }
         return `I don't know what is the capital of ${country}`;
     } else if (command.startsWith('what is')) {
-        const startIndex = 'What is '.length;
-        const lastIndex = command.length;
-        const evaluation = command.slice(startIndex, lastIndex);
-        return eval(evaluation);
+        const commandWords = command.split(' ');
+        const number1 = parseInt(commandWords[2]);
+        const number2 = parseInt(commandWords[4]);
+        const operation = commandWords[3];
+            if (number1 && number2) {
+                switch (operation) {
+                    case "+":
+                        return number1 + number2;
+                    case "-":
+                        return number1 - number2;
+                    case "*":
+                        return number1 * number2;
+                    case "/":
+                        return number1 / number2;
+                }
+            } else {
+                return "It`s not a number. Tell me a number"
+            }
     } else if (command.startsWith('Set a timer for')) {
         const startIndex = 'Set a timer for'.length;
         const lastIndex = command.indexOf('minutes');
@@ -114,6 +128,7 @@ console.log(getReply("What day is it today?"));
 console.log(getReply("what is 3 + 3"));
 console.log(getReply("what is 3 - 3"));
 console.log(getReply("what is 4 * 12"));
+console.log(getReply("what is 8 / 4"));
 // Set a timer in minutes
 console.log(getReply("Set a timer for 1 minutes"));
 // Extra command: search for capital in the array
