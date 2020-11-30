@@ -1,21 +1,3 @@
-// Create an input element
-const inputField = document.createElement('input');
-inputField.setAttribute('type','text');
-inputField.setAttribute('placeholder','Enter your name');
-inputField.setAttribute('class','name_input');
-const spiritAnimalNavigator = document.getElementById('spirit-animal-navigator');
-spiritAnimalNavigator.appendChild(inputField);
-
-// Create a button
-const myButton = document.createElement('button');
-myButton.setAttribute('class','button');
-myButton.innerText = 'Let`s go!';
-spiritAnimalNavigator.appendChild(myButton);
-
-// Create a tag to display the spirit animal info
-const info = document.createElement('p');
-spiritAnimalNavigator.appendChild(info);
-
 // Array of spirit animals
 const spiritAnimals = [
     'The Crying Graphorns', 'The Fullmoon Fwooper',
@@ -26,7 +8,7 @@ const spiritAnimals = [
 
 function getTheSpiritAnimal() {
     const userName = inputField.value.trim();
-
+    const info = document.querySelector('#info_paragraph');
     if (userName === '') {
         info.innerText = 'Tell me your name, and I will tell you your spirit animal'
     } else {
@@ -34,14 +16,17 @@ function getTheSpiritAnimal() {
         info.innerText = `${userName} - ${spiritAnimals[randomNumber]}`
     }
 }
+
 // Option #1: The button is clicked
-myButton.addEventListener('click', function() {
+const animalButton = document.querySelector('#get_animal_name_button');
+animalButton.addEventListener('click', function() {
     if (document.querySelector('#button_click_option').checked) {
         getTheSpiritAnimal();
     }
 });
 
 // Option #2: Hover over inputfield
+const inputField = document.querySelector('#input_field');
 inputField.addEventListener('mouseover', function() {
     if (document.querySelector('#inputfield_hover_option').checked) {
         getTheSpiritAnimal();
