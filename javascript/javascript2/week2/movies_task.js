@@ -55,14 +55,24 @@ console.log(sumMoviesWithKeyWords);
 // 7.Create an array of movies where a word in the title is duplicated. Fx "Star Wars: The Clone Wars" the word Wars is duplicated.
 // Here are some madeup examples of movies with duplicated words in the title: "The three men and the pistol", "Chase three - The final chase"
 
-// const duplicatedWords = movies.filter(movie => {
-//     const titleWords = movie.title.toLowerCase().split(' ');
-//     console.log(titleWords);
-//     if (titleWords.icludes()) {
-//         return duplicatedTitleWords;
-//     }
-// })
-// console.log(duplicatedWords)
+const duplicatedWordMovies = movies.filter(movie => {
+    const titleWords = movie.title.toLowerCase().split(' ');
+    return hasDuplicateWords(titleWords);
+})
+
+function hasDuplicateWords(words) {
+    for (let i = 0; i < words.length - 1; i++) {
+        for (let j = i + 1; j < words.length; j++) {
+            if (words[i] === words[j]) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
+console.log(duplicatedWordMovies);
 
 // 8.Calculate the average rating of all the movies using reduce.
 
