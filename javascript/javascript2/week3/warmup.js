@@ -45,12 +45,17 @@ planetLogFunction(saturnLogger);
 
 // 5.Create a button with the text called "Log location".
 // When this button is clicked the location (latitude, longitude) of the user should be logged out using this browser api
-
+let map;
 const locationElement = document.querySelector('#location');
 function success(pos) {
     const crd = pos.coords;
+    const center = {
+        lat: crd.latitude,
+        lng: crd.longitude
+    };
+    map.setCenter(center);
     locationElement.innerHTML = `<p>This is the latitude ${crd.latitude}</p>`;
-    locationElement.innerHTML += `<p>This is the latitude ${crd.latitude}</p>`;
+    locationElement.innerHTML += `<p>This is the longitude ${crd.longitude}</p>`;
     console.log('Your current position is:');
     console.log(`Latitude : ${crd.latitude}`);
     console.log(`Longitude: ${crd.longitude}`);
@@ -68,7 +73,12 @@ logLocationButton.addEventListener('click', () => {
 });
 
 // 6.Optional Now show that location on a map using fx the Google maps api
-
+function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: 0, lng: 0 },
+      zoom: 8,
+    });
+  }
 // 7.Create a function called runAfterDelay. It has two parameters: delay and callback.
 // When called the function should wait delay seconds and then call the provided callback function.
 // Try and call this function with different delays and different callback functions
@@ -128,5 +138,6 @@ function logBadJoke() {
     ]
     console.log(badJokes[Math.floor(Math.random() * badJokes.length)])
 }
+
 jokeCreator(true, logFunnyJoke, logBadJoke);
 jokeCreator(false, logFunnyJoke, logBadJoke);
