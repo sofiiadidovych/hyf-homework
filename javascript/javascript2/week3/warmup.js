@@ -75,26 +75,26 @@ logLocationButton.addEventListener('click', () => {
 // 6.Optional Now show that location on a map using fx the Google maps api
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
-      center: { lat: 0, lng: 0 },
-      zoom: 8,
+        center: { lat: 0, lng: 0 },
+        zoom: 20,
     });
-  }
+}
 // 7.Create a function called runAfterDelay. It has two parameters: delay and callback.
 // When called the function should wait delay seconds and then call the provided callback function.
 // Try and call this function with different delays and different callback functions
 
 function runAfterDelay(delay, callback) {
-    setTimeout(callback, delay*1000);
+    setTimeout(callback, delay * 1000);
 }
 const logOut = function() {
     console.log('Hi, I am here');
 }
 const countToTen = function() {
     for (let i = 1; i <= 10; i++) {
-    console.log(i);
+        console.log(i);
     }
 }
-function soundYoda(str) {
+const soundYoda = function(str) {
     const reversed = str.split(' ').reverse();
     const yoda = reversed.join(' ');
     console.log(yoda);
