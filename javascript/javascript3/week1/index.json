@@ -1,0 +1,105 @@
+[
+    {
+        "movie": "Home Alone",
+        "year": 1990,
+        "stars": [
+            {
+                "first_name": "Macaulay",
+                "last_name": "Culkin"
+            },
+            {
+                "first_name": "Joe",
+                "last_name": "Pesci"
+            },
+            {
+                "first_name": "Daniel",
+                "last_name": "Stern"
+            }
+        ],
+        "director": {
+            "first_name": "Chris",
+            "last_name": "Columbus"
+        },
+        "co-director": null,
+        "IMDB_rating": 7.6,
+        "comedy": true
+    },
+    {
+        "movie": "Love Actually",
+        "year": 2003,
+        "stars": [
+            {
+                "first_name": "Hugh",
+                "last_name": "Grant"
+            },
+            {
+                "first_name": "Martine",
+                "last_name": "McCutcheon"
+            },
+            {
+                "first_name": "Liam",
+                "last_name": "Neeson"
+            }
+        ],
+        "director": {
+            "first_name": "Richard",
+            "last_name": "Curtis"
+        },
+        "co-director": null,
+        "IMDB_rating": 7.6,
+        "comedy": false
+    },
+    {
+        "movie": "The Holiday",
+        "year": 2006,
+        "stars": [
+            {
+                "first_name": "Kate",
+                "last_name": "Winslet"
+            },
+            {
+                "first_name": "Cameron",
+                "last_name": "Diaz"
+            },
+            {
+                "first_name": "Jude",
+                "last_name": "Law"
+            }
+        ],
+        "director": {
+            "first_name": "Nancy",
+            "last_name": "Meyers"
+        },
+        "co-director": null,
+        "IMDB_rating": 6.9,
+        "comedy": true
+    },
+    {
+        "movie": "Klaus",
+        "year": 2019,
+        "stars": [
+            {
+                "first_name": "Jason",
+                "last_name": "Schwartzman"
+            },
+            {
+                "first_name": "J.K.",
+                "last_name": "Simmons"
+            },
+            {
+                "first_name": "Rashida",
+                "last_name": "Jones"
+            }
+        ],
+        "director": {
+            "first_name": "Sergio",
+            "last_name": "Pablos"
+        },
+        "co-director": {
+            "first_name": "Carlos Martines",
+            "last_name": "Lopez"
+        },
+        "IMDB_rating": 8.2,
+        "comedy": true
+    }
+]
