@@ -1,5 +1,13 @@
 //@ts-check
 
+window.addEventListener('load', () => {
+    const cityFromLocalStorage = localStorage.getItem('city');
+    console.log(cityFromLocalStorage);
+    if (cityFromLocalStorage) {
+        getWeather(`https://api.openweathermap.org/data/2.5/weather?q=${cityFromLocalStorage}&appid=0b2171133666adf69c5fc412fc18bb00`);
+    }
+});
+
 const cityInputField = document.querySelector('#city_input_field');
 const selectButton = document.querySelector('#select_button');
 const weatherInfo = document.querySelector('#weather_info');
@@ -53,6 +61,8 @@ function getWeather(url) {
                 weatherInfo.setAttribute('class', '');
                 console.log(data);
                 city.innerHTML = data.name;
+                // Save the city to the local storage
+                localStorage.setItem('city', data.name);
                 const c = convertKelvinToCelcius(data.main.temp);
                 temperature.innerHTML = `temperature is ${c}° Celcius`;
                 weatherIcon.setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
