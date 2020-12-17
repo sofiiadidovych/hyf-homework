@@ -1,6 +1,7 @@
 //@ts-check
 
 window.addEventListener('load', () => {
+    // Load the last searched city from the local storage
     const cityFromLocalStorage = localStorage.getItem('city');
     console.log(cityFromLocalStorage);
     if (cityFromLocalStorage) {
@@ -19,17 +20,18 @@ const cloudy = document.querySelector('#cloudy');
 const sunrise = document.querySelector('#sunrise');
 const sunset = document.querySelector('#sunset');
 
-// In openweather API temperature is indicated in Kelvin, we convert it to Celcius
+// In openweather API temperature is indicated in Kelvin, convert it to Celcius
 function convertKelvinToCelcius(k) {
     return Math.round(k - 272.15);
 }
-// Time is set as a timestamp, we convert it to hours and minutes
+
+// Time is set as a timestamp, convert it to hours and minutes
 function convertTimestampToTime(stamp) {
     const time = new Date(stamp * 1000);
     return `${time.getHours()}:${time.getMinutes()}`;
 }
 
-// We use Google maps to show our location
+// Use Google maps to show our location
 let map;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -38,7 +40,7 @@ function initMap() {
     });
 }
 
-// We apply getWeather function to get weather by city name
+// Apply getWeather function to get weather by city name
 selectButton.addEventListener('click', () => {
     if (cityInputField.value === '') {
         alert('Select your city');
@@ -51,7 +53,7 @@ function getWeather(url) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            // In case user mispelt the name of the city
+            // In case user misspelt the name of the city
             if (data.cod === '404') {
                 city.innerHTML = 'city not found';
                 // Hide info section which is empty
@@ -82,13 +84,13 @@ function getWeather(url) {
 const locationElement = document.querySelector('#location');
 const locationButton = document.querySelector('#location_button');
 
-// We apply getWeather function to get weather by location
+// Apply getWeather function to get weather by location
 function success(pos) {
     console.log(pos);
     getWeather(`https://api.openweathermap.org/data/2.5/weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&appid=0b2171133666adf69c5fc412fc18bb00`)
 }
 
-// We show some text, in case user blocked access to his/her geolocation data
+// Show some text, in case user blocked access to their geolocation data
 function error(err) {
     locationElement.innerHTML = `ERROR(${err.code}): ${err.message}`;
     console.warn(`ERROR(${err.code}): ${err.message}`);
