@@ -12,13 +12,14 @@ function setTimeoutPromise(delay) {
     })
 }
 
-setTimeoutPromise(3000).then(() => {
-    console.log('Called after 3 seconds');
-})
+setTimeoutPromise(3000)
+    .then(() => {
+        console.log('Called after 3 seconds');
+    })
 
 setTimeoutPromise(0)
     .then(() => {
-        console.log('Called after 3 seconds');
+        console.log('It will never be logged');
     })
     .catch(error => {
         console.log(error);
