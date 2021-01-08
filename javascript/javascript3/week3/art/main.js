@@ -37,13 +37,14 @@ setInterval(() => {
     const x = Math.floor(Math.random() * canvas.width);
     const y = Math.floor(Math.random() * canvas.height);
     const r = Math.floor((Math.random() * 100) + 10);
-    function getRandomColor() {
-        const n = ((Math.random() * 0xfffff * 1000000).toString(16));
-        return '#' + n.slice(0, 6);
-    };
     const circle = new Circle(x, y, r, 0, 2 * Math.PI, getRandomColor());
     circle.draw();
 }, 100);
+
+function getRandomColor() {
+    const n = ((Math.random() * 0xfffff * 1000000).toString(16));
+    return '#' + n.slice(0, 6);
+};
 
 //Follow the mouse
 let mouseX;
@@ -58,10 +59,6 @@ setInterval(() => {
     const x = mouseX;
     const y = mouseY;
     const r = Math.floor((Math.random() * 100) + 10);
-    function getRandomColor() {
-        const n = ((Math.random() * 0xfffff * 1000000).toString(16));
-        return '#' + n.slice(0, 6);
-    };
     const circle = new Circle(x, y, r, 0, 2 * Math.PI, getRandomColor());
     circle.draw();
 }, 100);

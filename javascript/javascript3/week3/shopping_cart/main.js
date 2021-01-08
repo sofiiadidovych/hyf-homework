@@ -1,5 +1,5 @@
+const userSection = document.querySelector('#user');
 const productsList = document.querySelector('#productsList');
-const searchField = document.querySelector('#search_field');
 
 class Product {
     constructor(name, price) {
@@ -19,7 +19,7 @@ class Product {
 }
 
 const plant = new Product("plant", 50);
-console.log(plant.convertToCurrency('dollar') + " this");
+console.log(plant.convertToCurrency('dollar'));
 
 class ShoppingCart {
     constructor() {
@@ -31,13 +31,11 @@ class ShoppingCart {
     }
 
     removeProduct(product) {
-        const removedProductArray = this.products.filter(el => el.name !== product.name);
-        this.products = removedProductArray;
+        this.products = this.products.filter(el => el.name !== product.name);
     }
 
     searchProduct(productName) {
-        const searchedProduct = this.products.filter(el => el.name === productName);
-        return searchedProduct;
+        return this.products.filter(el => el.name === productName);
     }
 
     getTotal() {
@@ -50,10 +48,10 @@ class ShoppingCart {
 
     renderProducts() {
         for (let i = 0; i < this.products.length; i++) {
-            const productName = document.createElement('h1');
+            const productName = document.createElement('h2');
             productName.innerText = this.products[i].name;
             productsList.appendChild(productName);
-            const productPrice = document.createElement('span');
+            const productPrice = document.createElement('p');
             productPrice.innerText = this.products[i].price;
             productsList.appendChild(productPrice);
         }
@@ -80,7 +78,16 @@ console.log(shoppingCart);
 shoppingCart.removeProduct(product2);
 console.log(shoppingCart);
 
-console.log(shoppingCart.getUser());
-console.log(shoppingCart.getTotal());
-shoppingCart.renderProducts();
+shoppingCart.getUser()
+    .then(response => response.json())
+    .then(data => {
+        const user = document.createElement('h1');
+        user.innerText = data.name;
+        userSection.appendChild(user);
+        const totalShoppings = document.createElement('p');
+        totalShoppings.innerText = shoppingCart.getTotal();
+        userSection.appendChild(totalShoppings);
+        shoppingCart.renderProducts();
+    });
+
 console.log(shoppingCart.searchProduct('toothpaste'));
