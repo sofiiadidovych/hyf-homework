@@ -1,6 +1,6 @@
 // 1.Log out the text Called after 2.5 seconds 2.5 seconds after the script is loaded.
 window.addEventListener('load', () => {
-    setTimeout( () => {
+    setTimeout(() => {
         console.log('Called after 2.5 seconds');
     }, 2500);
 });
@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
 // Calling this function should log out the stringToLog after delay seconds.
 // Call the function you have created with some different arguments.
 function logOutString(delay, stringTolog) {
-    setTimeout( () => {
+    setTimeout(() => {
         console.log(stringTolog);
     }, delay * 1000);
 }
@@ -30,14 +30,14 @@ delayButton.addEventListener('click', () => {
 // The only thing the third function should do is call the provided parameter function.
 // Try call the third function once with the Earth function and once with the Saturn function.
 
-const earthLogger = function() {
+const earthLogger = function () {
     console.log('Earth');
 };
-const saturnLogger = function() {
+const saturnLogger = function () {
     console.log('Saturn');
 };
 
-const planetLogFunction = function(planetLogger) {
+const planetLogFunction = function (planetLogger) {
     planetLogger();
 }
 planetLogFunction(earthLogger);
@@ -86,15 +86,15 @@ function initMap() {
 function runAfterDelay(delay, callback) {
     setTimeout(callback, delay * 1000);
 }
-const logOut = function() {
+const logOut = function () {
     console.log('Hi, I am here');
 }
-const countToTen = function() {
+const countToTen = function () {
     for (let i = 1; i <= 10; i++) {
         console.log(i);
     }
 }
-const soundYoda = function(str) {
+const soundYoda = function (str) {
     const reversed = str.split(' ').reverse();
     const yoda = reversed.join(' ');
     console.log(yoda);
@@ -106,8 +106,15 @@ runAfterDelay(8, () => soundYoda('I am your father'));
 // 8.Check if we have double clicked on the page. A double click is defined by two clicks within 0.5 seconds.
 // If a double click has been detected, log out the text: "double click!"
 
-window.addEventListener('dblclick', () => {
-    console.log('double click!')
+let previousClick = 0;
+
+window.addEventListener('click', () => {
+   const click = Date.now();
+   if (click - previousClick < 500) {
+       console.log('double click detected!');
+       return;
+   }
+   previousClick = click;
 })
 
 // 9.Create a function called jokeCreator that has three parameters: shouldTellFunnyJoke - boolean,

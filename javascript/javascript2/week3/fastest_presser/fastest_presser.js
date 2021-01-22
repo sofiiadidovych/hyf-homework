@@ -50,6 +50,7 @@ function countKeypresses(e) {
 
 // Function to start the game and remove all the previous results
 function startGame() {
+    amountOfTime.setAttribute('readonly', true);
     countS = 0;
     countL = 0;
     resultS.innerText = ' ';
@@ -66,6 +67,7 @@ function startGame() {
 // Function to end the game and let players know who is the winner
 function endGame() {
     gameIsActive = false;
+    amountOfTime.removeAttribute('readonly');
     window.removeEventListener('keypress', countKeypresses);
 
     if (countL > countS) {
