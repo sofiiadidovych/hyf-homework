@@ -1,3 +1,4 @@
+const { response } = require("express");
 const express = require("express");
 const router = express.Router();
 
@@ -15,7 +16,6 @@ router.get("/", async (request, response) => {
       }
     } else if (request.query.title != undefined) {
       const title = request.query.title.toLowerCase();
-      console.log(title)
       if (title != '') {
         const matchingMeal = meals.filter(meal => meal.title.toLowerCase().includes(title));
         response.send(matchingMeal);
@@ -24,7 +24,6 @@ router.get("/", async (request, response) => {
       }
     } else if (request.query.createdAfter != undefined) {
       const createdAfter = new Date(request.query.createdAfter);
-      console.log(createdAfter);
       if (!isNaN(createdAfter)) {
         const mealsCreatedAfter = meals.filter(meal => new Date(meal.createdAt) > createdAfter);
         response.send(mealsCreatedAfter);
@@ -50,12 +49,13 @@ router.get("/", async (request, response) => {
 
 router.get("/:id", async (request, response) => {
   try {
-    const validId = parseInt(request.params.id);
-    if (validId > 0) {
+    const id = parseInt(request.params.id);
+    if (id > 0) {
       let mealWithId;
       for (let i = 0; i < meals.length; i++) {
-        if (meals[i].id === validId) {
+        if (meals[i].id === id) {
           mealWithId = meals[i];
+          break;
         }
       }
       response.send(mealWithId);

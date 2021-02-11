@@ -13,12 +13,13 @@ router.get("/", async (request, response) => {
 
 router.get("/:id", async (request, response) => {
     try {
-        const validId = parseInt(request.params.id);
-        if (validId > 0) {
+        const id = parseInt(request.params.id);
+        if (id > 0) {
             let reviewWithId;
             for (let i = 0; i < reviews.length; i++) {
-                if (reviews[i].id === validId) {
+                if (reviews[i].id === id) {
                     reviewWithId = meals[i];
+                    break;
                 }
             }
             response.send(reviewWithId);
