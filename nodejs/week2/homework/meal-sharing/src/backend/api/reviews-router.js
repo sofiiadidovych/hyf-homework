@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const reviews = require("../data/reviews.json");
+const meals = require("../data/meals.json");
 
 router.get("/", async (request, response) => {
     try {
