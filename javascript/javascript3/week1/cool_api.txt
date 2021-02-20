@@ -1,0 +1,13 @@
+https://data.rijksmuseum.nl/object-metadata/api/
+I requested api-key
+The response is here https://www.rijksmuseum.nl/api/nl/collection?key=[api-key]&involvedMaker=Rembrandt+van+Rijn
+
+It is an object that contains 3536 elements. One of the properties is artobjects.
+Artobjects' value is represented in an array of objects, which contains links, titles.
+Each artobject itself contains info about a masterpiece:
+- title of the painting;
+- long title (which includes year and place of creation)
+- boolean variables: hasImage, showImage, permitDownload;
+- width and height of the painting;
+- production place;
+- etc.
