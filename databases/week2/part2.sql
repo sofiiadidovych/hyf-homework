@@ -14,7 +14,7 @@ CREATE TABLE class (
 	id INT PRIMARY KEY AUTO_INCREMENT, 
     name VARCHAR(15), 
     email TEXT, 
-    phone INT, 
+    phone VARCHAR(15), 
     class_id INT,
     FOREIGN KEY (class_id) REFERENCES class(id)
 );
