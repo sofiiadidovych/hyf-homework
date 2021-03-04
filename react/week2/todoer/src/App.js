@@ -1,54 +1,70 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 
-function TodoItem({ number, description }) {
-  const [isChecked, setIsChecked] = useState(false)
-  const [deleteState, setDeleteState] = useState(todos);
-
-  const deleteTodo = () => {
-    console.log('delete')
-  };
+function TodoItem({ id, description, onDelete }) {
+  const [isChecked, setIsChecked] = useState(false);
 
   const check = () => {
-    if(isChecked) {
-      console.log('checked')
-      const description = description;
-      console.log(description)
-      description.strike()
-      setIsChecked()
-    }
-  }
+    setIsChecked(!isChecked);
+  };
 
   return (
-    <li>
-      #{number}: {description}
-      <input type="checkbox" onChange={check}>{isChecked ? console.log("checked") : console.log("not checked")}</input>
-      <button onClick={deleteTodo}>Delete</button>
+    <li className={isChecked ? "checked" : "not-checked"}>
+      #{id}: {description}
+      <input type="checkbox" onChange={check}></input>
+      <button onClick={() => onDelete(id)}>Delete</button>
     </li>
   );
 }
 
 function TodoList({ todos }) {
-  console.log("render list");
+  const [stateTodos, setStateTodos] = useState(todos);
+
+  const addTodo = () => {
+      const newTodo = {
+        id: stateTodos.length > 0 ? stateTodos[stateTodos.length - 1].id + 1 : 1,
+        description: "random text",
+      };
+      const todosWithNew = stateTodos.concat(newTodo);
+      setStateTodos(todosWithNew);
+  };
+
+  const onDelete = (id) => {
+      const filteredTodos = stateTodos.filter((todo) => todo.id !== id);
+      setStateTodos(filteredTodos);
+  };
+
   return (
-    <ul>
-      {todos.map((todo) => (
-        <TodoItem
-          key={todo.id}
-          number={todo.id}
-          description={todo.description}
-        ></TodoItem>
-      ))}
-    </ul>
+    <>
+      <button onClick={addTodo}>Add todo</button>
+      <ul>
+        {stateTodos.length > 0 ?
+        stateTodos.map((todo) => (
+          <TodoItem
+            key={todo.id}
+            id={todo.id}
+            description={todo.description}
+            onDelete={onDelete}
+          ></TodoItem>
+        ))
+          : 'No items'}
+      </ul>
+    </>
   );
 }
 
 function Timer() {
   const [count, setCount] = useState(0);
 
-  setTimeout(() => {
-    setCount(count + 1);
-  }, 1000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCount((prev) => prev + 1);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  });
 
   return (
     <p>You have used {count} seconds on this website</p>
@@ -56,19 +72,11 @@ function Timer() {
 }
 
 function App() {
-  const [stateTodos, setStateTodos] = useState(todos);
-
-  const addTodo = () => {
-    const newTodo = { id: stateTodos.length + 1, description: "random text" };
-    setStateTodos(prev => prev.concat(newTodo));
-  };
-
   return (
     <>
       <h1>TODO list</h1>
       <Timer></Timer>
-      <button onClick={addTodo}>Add todo</button>
-      <TodoList todos={stateTodos}></TodoList>
+      <TodoList todos={todos}></TodoList>
     </>
   );
 }
