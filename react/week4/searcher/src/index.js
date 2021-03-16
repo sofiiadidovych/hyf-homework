@@ -7,9 +7,11 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <SearchProvider>
-      <App />
-    </SearchProvider>
+    <div className="App">
+      <SearchProvider>
+        <App />
+      </SearchProvider>
+    </div>
   </React.StrictMode>,
   document.getElementById("root")
 );
