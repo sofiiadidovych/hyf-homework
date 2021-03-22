@@ -1,53 +1,11 @@
 import { useState, useEffect } from "react";
-import PropTypes from 'prop-types';
-import Timer from "./timer";
+import Timer from "./Timer";
+import "./App.css";
+import TodoItem from "./TodoItem";
+import FancyBorder from "./FancyBorder";
 
 const API_URL =
   "https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw";
-
-function TodoItem({ id, description, deadline, onDelete, onUpdate }) {
-  const [isChecked, setIsChecked] = useState(false);
-  const [isEdit, setIsEdit] = useState(false);
-  const [updatedDescription, setUpdatedDescription] = useState(description);
-
-  const check = () => {
-    setIsChecked(!isChecked);
-  };
-
-  return (
-    <li className={isChecked ? "checked" : "not-ckecked"}>
-      { isEdit
-      ? <input
-            type="text"
-            value={updatedDescription}
-            onChange={(event)=> {
-                const value = event.target.value;
-                setUpdatedDescription(value);
-            }}/>
-      : <span>#{id} | {description} | {deadline}</span> }
-
-      <input type="checkbox" onChange={check} />
-      <button onClick={() => onDelete(id)}>Delete</button>
-
-      { isEdit
-      ? <button onClick={() => {
-            onUpdate(id, updatedDescription);
-            setIsEdit(false);
-            }
-        }>Update</button>
-      : <button onClick={() => setIsEdit(true)}>Edit</button> }
-
-    </li>
-  );
-}
-
-TodoItem.propTypes = {
-    id: PropTypes.number.isRequired,
-    description: PropTypes.string.isRequired,
-    deadline: PropTypes.string.isRequired,
-    onDelete: PropTypes.func.isRequired,
-    onUpdate: PropTypes.func.isRequired,
-}
 
 function TodoList({ todos, onDelete, onUpdate }) {
   return (
@@ -69,10 +27,6 @@ function TodoList({ todos, onDelete, onUpdate }) {
   );
 }
 
-function FancyBorder(props) {
-  return <div className="fancy-border">{props.children}</div>;
-}
-
 function TodoContainer() {
   const [todos, setTodos] = useState([]);
   const [todoDescription, setTodoDescription] = useState("");
@@ -86,18 +40,18 @@ function TodoContainer() {
 
   const handleAddTodo = (event) => {
     event.preventDefault();
-    if (todoDescription === '') {
-        alert('Description can not be empty');
-        return;
+    if (todoDescription === "") {
+      alert("Description can not be empty");
+      return;
     }
 
     const todoDate = new Date(todoDeadline);
     const todayDate = new Date();
-    todayDate.setHours(0, 0, 0, 0);
+    todayDate.setHours(0, 0, 0, 0); // Set time to the start of the day
 
     if (isNaN(todoDate.getTime()) || todoDate < todayDate) {
-        alert('Deadline is not valid')
-        return;
+      alert("Deadline is not valid");
+      return;
     }
 
     const newTodo = {
@@ -118,13 +72,13 @@ function TodoContainer() {
 
   const onUpdate = (id, updatedDescription) => {
     const updatedTodos = [...todos];
-    updatedTodos.forEach(todo => {
-        if(todo.id === id) {
-            todo.description = updatedDescription
-        }
+    updatedTodos.forEach((todo) => {
+      if (todo.id === id) {
+        todo.description = updatedDescription;
+      }
     });
     setTodos(updatedTodos);
-  }
+  };
 
   return (
     <>
