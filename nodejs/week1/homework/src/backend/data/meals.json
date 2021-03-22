@@ -1,0 +1,19 @@
+[
+    {
+        "id" : 1,
+        "title" : "Indian food in the summer",
+        "maxNumberOfGuests" : 5,
+        "description" : "A nice night out eating delicious indian food",
+        "createdAt" : "2019/12/7 14:34",
+        "price" : 67
+    },
+
+    {
+        "id" : 2,
+        "title" : "Ukrainian food in the winter",
+        "maxNumberOfGuests" : 7,
+        "description" : "A warm dinner eating delicious ukrainian food",
+        "createdAt" : "2021/2/1 15:34",
+        "price" : 115
+    }
+]
