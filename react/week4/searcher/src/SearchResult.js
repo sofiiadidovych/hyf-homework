@@ -3,14 +3,15 @@ import {SearchContext} from './SearchContext';
 
 const SearchResult = () => {
     const searchContext = useContext(SearchContext);
+    const searchResult = searchContext.error.length > 0
+        ? <p>{searchContext.error}</p>
+        : <UserList />;
 
     return (
         <div>
             {searchContext.isLoading
-            ? 'Loading...'
-            : searchContext.error.length > 0
-                ? <p>{searchContext.error}</p>
-                : <UserList />
+                ? 'Loading...'
+                : searchResult
             }
         </div>
     )

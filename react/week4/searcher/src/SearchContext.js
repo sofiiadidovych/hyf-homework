@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 
 export const SearchContext = createContext();
-const API_URL = "https://api.github.com/search/users?q=";
+const SEARCH_USERS_URL = "https://api.github.com/search/users?q=";
 const HYF_REPOS_URL = "https://api.github.com/users/HackYourFuture-CPH/repos";
 
 const SearchProvider = ({ children }) => {
@@ -14,11 +14,12 @@ const SearchProvider = ({ children }) => {
   useEffect(() => {
     if (query === "") {
       setUsers([]);
+      setError('');
       return;
     }
 
     setIsLoading(true);
-    fetch(API_URL + query)
+    fetch(SEARCH_USERS_URL + query)
         .then(response => {
             if (response.ok) {
                 return response.json();
@@ -30,7 +31,10 @@ const SearchProvider = ({ children }) => {
             setError(er.toString());
         })
         .then(data => {
-            if (data !== undefined) setUsers(data.items);
+            if (data) {
+              setUsers(data.items);
+              setError('');
+            }
         })
         .finally(() => setIsLoading(false));
   }, [query]);
