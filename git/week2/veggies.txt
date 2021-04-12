@@ -1,5 +1,7 @@
 potatos
 carrots
-beetroots
+horseraddish
 parsnip
 artichoke
+asparagus
+cucumber
