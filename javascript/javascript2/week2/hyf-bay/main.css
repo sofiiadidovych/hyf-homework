@@ -1,0 +1,44 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #D4D6ED;
+}
+* {
+    box-sizing: border-box;
+}
+
+body, h1, h2, p {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.input {
+    display: flex;
+    flex: row;
+}
+input {
+    border: 1px solid #9895BD;
+    border-radius: 5px;
+    margin: 2px;
+    padding: 5px;
+    margin-top: 15px;
+}
+select {
+    border: 1px solid #9895BD;
+    border-radius: 5px;
+    margin:2px;
+}
+label,
+option {
+    font-family: "Open Sans", sans-serif;
+    color: rgb(71, 71, 71);
+    font-size: smaller;
+}
+li {
+    border: 1px dashed rgb(152,149,189);
+    background-color: transparent;
+    padding: 5px;
+}
