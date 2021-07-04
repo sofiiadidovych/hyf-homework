@@ -3,3 +3,5 @@ carrots
 cabbage
 parsnip
 artichoke
+asparagus
+cucumber
